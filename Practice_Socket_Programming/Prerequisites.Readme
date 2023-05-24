@@ -1,0 +1,9 @@
+-: Steps to Use the code :-
+
+>> Make sure the declared port number is available (not being utilised by other programs) on your system, and if it is 
+not available then try changing the port number int both client side and server side of code.
+
+>> Then Run the "Server.java" file, this will activate the server.
+>> Then run the "Client.java" file, this will activate a client.
+
+This code shows us the Two way Communication using socket programming which takes input from the client and gives predefined replies from the server sde of the code.
