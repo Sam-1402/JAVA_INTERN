@@ -12,34 +12,34 @@ public class QuickSort extends Sort{
         quicksort(inputElements, 0, inputElements.length-1);
         return inputElements;
     }
-    static int partition(int array[], int low, int high) {
-        int pivot = array[high];
+    static int partition(int[] array, int low, int high) {
+        int mid = low + (high-low)/2;
+        int pivot = array[mid];
+        int i = low;
+        int j = high;
 
-        int i = (low - 1);
-
-        for (int j = low; j < high; j++) {
-            if (array[j] <= pivot) {
-
+        while(i<=j){
+            while (array[i] < pivot)
                 i++;
-                int temp = array[i];
+            while (array[j] > pivot)
+                j--;
+            if (i <= j) {
+                int tmp = array[i];
                 array[i] = array[j];
-                array[j] = temp;
+                array[j] = tmp;
+                i++;
+                j--;
             }
-
         }
-        int temp = array[i + 1];
-        array[i + 1] = array[high];
-        array[high] = temp;
-        return (i + 1);
+        return i;
     }
 
-    static void quicksort(int array[], int low, int high) {
-        if (low < high) {
-            int pi = partition(array, low, high);
-
-            quicksort(array, low, pi - 1);
-            quicksort(array, pi + 1, high);
-        }
+    static void quicksort(int[] array, int low, int high) {
+        int index = partition(array, low, high);
+        if (low < index - 1)
+            quicksort(array, low, index - 1);
+        if (index < high)
+            quicksort(array, index, high);
     }
 
 
@@ -52,7 +52,7 @@ public class QuickSort extends Sort{
             fr = new FileReader(inputFile);
             BufferedReader br = new BufferedReader(fr);
             String toSplit = null;
-            while((toSplit = br.readLine()) != null){
+            while((toSplit = br.readLine()) != null ){
                 arr = toSplit.split(",");
             }
             array = new int[arr.length];
