@@ -1,8 +1,8 @@
 package Similarity_Algorithms;
 
-public abstract class Similarities implements Similarity_Algos{
-    double[] vector1;
-    double[] vector2;
+public abstract class Similarities implements ISimilarity_Algos {
+    String inputFilename1;
+    String inputFilename2;
 
     public abstract double findSimilarity();
 }
