@@ -9,8 +9,8 @@ public class Main {
         String algos[] = {"cosine", "euclidean", "manhattan", "jaccard", "minkowski"};
         int num = sc.nextInt();
         Similarities sm = Similarity_Adapter.getSimilarityAlgo(algos[num-1]);
-        sm.inputFilename1 = "C:\\Users\\HP\\Downloads\\Input 1(a).txt";
-        sm.inputFilename2 = "C:\\Users\\HP\\Downloads\\Input 1(b).txt";
+        sm.inputFilename1 = "C:\\Users\\HP\\IdeaProjects\\Internship\\src\\Similarity_Algorithms\\Dummy_text1.txt";
+        sm.inputFilename2 = "C:\\Users\\HP\\IdeaProjects\\Internship\\src\\Similarity_Algorithms\\Dummy_text2.txt";
         System.out.println("Similarity: "+sm.findSimilarity());
     }
 }
